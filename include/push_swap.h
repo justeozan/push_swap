@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/08 12:57:59 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:29:36 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <unistd.h>
 # include <limits.h>
-# include "libft/libft.h"
+# include <stdbool.h>
+# include "../libft/libft.h"
 # include "commands.h"
 
 typedef struct s_stack
