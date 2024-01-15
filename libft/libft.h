@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:21:30 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/12 11:17:18 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:09:14 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 /*-------------nbr-------------*/
 int		ft_atoi(const char *nptr);
+int		ft_atol(const char *nptr);
 char	*ft_itoa(int n);
 /*-------------printf-------------*/
 void	ft_print_str(char *s, size_t *octet);

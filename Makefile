@@ -6,13 +6,14 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/01/12 11:25:44 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/01/15 13:12:47 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap.a
+NAME	=	push_swap
 
-SRC		=	src/push_swap.c
+SRC		=	src/push_swap.c\
+			src/ft_errors.c\
 
 OBJ		=	${SRC:.c=.o}
 
@@ -26,7 +27,7 @@ LIBFT	=	make all -C libft/
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
-			ar rc ${NAME} ${OBJ}
+			gcc -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
 
 all:		${NAME}
 
