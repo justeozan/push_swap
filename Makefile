@@ -6,13 +6,17 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/01/15 14:55:54 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/01/15 17:07:21 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 
 SRC		=	\
+			commands/push.c\
+			commands/rotate.c\
+			commands/swap.c\
+			\
 			src/ft_chekers.c\
 			src/ft_errors.c\
 			src/ft_stack_utils.c\

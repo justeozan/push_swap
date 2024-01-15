@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 16:48:34 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/15 17:14:51 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ typedef struct s_stack
 /*************COMMANDS**************/
 /*---------push.c---------*/
 void	push(t_stack **dest, t_stack **src);
-
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+/*---------swap.c---------*/
+void	sa(t_stack **a, bool print);
+void	sb(t_stack **b, bool print);
+void	ss(t_stack **a, t_stack **b);
 /***************SRC****************/
 /*---------ft_stack_utils.c---------*/
 t_stack	*find_last(t_stack *stack);
@@ -50,6 +55,5 @@ void	ft_error(t_stack **a, char *err_txt, char **av, bool do_free);
 int		add_element_in_stack(t_stack **stack, int n);
 void	init_stack(t_stack **stack, char **av, bool do_free);
 int		main(int ac, char **av);
-
 
 #endif

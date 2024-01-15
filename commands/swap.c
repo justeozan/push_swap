@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 16:42:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 17:08:05 by ozasahin         ###   ########.fr       */
+/*   Created: 2024/01/15 17:06:18 by ozasahin          #+#    #+#             */
+/*   Updated: 2024/01/15 17:18:51 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push(t_stack **dst, t_stack **src)
+void	sa(t_stack **a, bool print)
 {
-	t_stack	*tmp;
+	t_stack *tmp;
 	
-	tmp = NULL;
-	if (!(*src))
+	if (!a || stack_size(a) < 2)
 		return ;
-	tmp = (*src);
-	(*src) = (*src)->next;
-	tmp->next = (*dst);
-	(*dst) = tmp;
+	tmp = (*a);
+	(*a) = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+	if (print)
+		write(1, "sb\n", 3);
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	sb(t_stack **b, bool print)
 {
-	push(a, b);
-	write(1, "pa\n", 3);
+	if (stack_size(b) < 2)
+		return ;
+	if (print)
+		write(1, "sb\n", 3);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
-	push(b, a);
-	write(1, "pb\n", 3);
+	sa(a, false);
+	sb(b, false);
+	write(1, "ss\n", 3);
 }
