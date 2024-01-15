@@ -6,25 +6,13 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 16:20:28 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:36:21 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-bool	stack_is_sorted(t_stack *stack)
-{
-	if (!stack)
-		return (true);
-	while (stack->next)
-	{
-		if (stack->nbr > stack->next->nbr)
-			return (false);
-		
-		stack = stack->next;
-	}
-	return (true);
-}
+
 
 int	add_element_in_stack(t_stack **stack, int n)
 {
@@ -85,11 +73,18 @@ int main(int ac, char **av)
 		init_stack(&a, av + 1, false);
 	if (!stack_is_sorted(a))
 	{
-		if (stack_size(a) == 2)
-			
 		ft_putstr_fd("not sorted\n", 2);
+		ft_printf("stack size = %d\n", stack_size(a));
+		if (stack_size(a) == 2)
+			return (0);
+		else if (stack_size(a) == 3)
+			return (0);
+		else
+			ft_putstr_fd("size is more than 3 numbers\n", 2);
+		
 		return (0);
 	}
 	ft_putstr_fd("sorted\n", 2);
+	free_stack(&a);
 	return (0);
 }
