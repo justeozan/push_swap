@@ -35,9 +35,15 @@ typedef struct s_stack
 void	push(t_stack **dest, t_stack **src);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+/*---------rotate.c---------*/
+void	rotate(t_stack **a);
+void	ra(t_stack **a, bool print);
+void	rb(t_stack **b, bool print);
+void	rr(t_stack **a, t_stack **b);
 /*---------swap.c---------*/
-void	sa(t_stack **a, bool print);
-void	sb(t_stack **b, bool print);
+void	swap(t_stack **stack);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 /***************SRC****************/
 /*---------ft_stack_utils.c---------*/
