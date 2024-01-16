@@ -35,10 +35,15 @@ typedef struct s_stack
 void	push(t_stack **dest, t_stack **src);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+/*---------rev_rotate.c---------*/
+void	rev_rotate(t_stack **stack);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 /*---------rotate.c---------*/
-void	rotate(t_stack **a);
-void	ra(t_stack **a, bool print);
-void	rb(t_stack **b, bool print);
+void	rotate(t_stack **stack);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 /*---------swap.c---------*/
 void	swap(t_stack **stack);
@@ -49,7 +54,7 @@ void	ss(t_stack **a, t_stack **b);
 /*---------ft_stack_utils.c---------*/
 t_stack	*find_last(t_stack *stack);
 bool	stack_is_sorted(t_stack *stack);
-int	stack_size(t_stack *stack);
+int		stack_size(t_stack *stack);
 /*---------ft_chekers.c---------*/
 bool	check_syntax(char *str);
 bool	check_duplicate(t_stack *a, int value);

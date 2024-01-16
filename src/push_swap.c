@@ -76,7 +76,7 @@ int main(int ac, char **av)
 		ft_putstr_fd("not sorted\n", 2);
 		ft_printf("stack size = %d\n", stack_size(a));
 		if (stack_size(a) == 2)
-			return (0);
+			sa(&a);
 		else if (stack_size(a) == 3)
 			return (0);
 		else

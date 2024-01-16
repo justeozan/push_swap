@@ -14,6 +14,7 @@ NAME	=	push_swap
 
 SRC		=	\
 			commands/push.c\
+			commands/rev_rotate.c\
 			commands/rotate.c\
 			commands/swap.c\
 			\
@@ -31,17 +32,17 @@ RM		=	rm -f
 LIBFT	=	make all -C libft/
 
 .c.o:	include/push_swap.h
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
-			gcc -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
+			@gcc -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
 
 all:		${NAME}
 
 clean:
-			${RM} ${OBJ}
+			@${RM} ${OBJ}
 
 fclean:		clean
-			${RM} ${NAME}
+			@${RM} ${NAME}
 
 re:		fclean all

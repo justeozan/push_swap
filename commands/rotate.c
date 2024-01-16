@@ -21,18 +21,18 @@ void	rotate(t_stack **stack)
 		return ;
 	first = (*stack);
 	(*stack) = (*stack)->next;
-	last = find_last(stack);
+	last = find_last(*stack);
 	last->next = first;
 	first->next = NULL;
 }
 
-void	ra(t_stack **a, bool print)
+void	ra(t_stack **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **b, bool print)
+void	rb(t_stack **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);

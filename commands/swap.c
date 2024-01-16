@@ -16,7 +16,7 @@ void	swap(t_stack **stack)
 {
 	t_stack *tmp;
 	
-	if (!stack || stack_size(stack) < 2)
+	if (!stack || stack_size(*stack) < 2)
 		return ;
 	tmp = (*stack);
 	(*stack) = (*stack)->next;
