@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 17:14:51 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:15:06 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ss(t_stack **a, t_stack **b);
 t_stack	*find_last(t_stack *stack);
 bool	stack_is_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
+t_stack	*find_max(t_stack *stack);
 /*---------ft_chekers.c---------*/
 bool	check_syntax(char *str);
 bool	check_duplicate(t_stack *a, int value);
@@ -66,5 +67,9 @@ void	ft_error(t_stack **a, char *err_txt, char **av, bool do_free);
 int		add_element_in_stack(t_stack **stack, int n);
 void	init_stack(t_stack **stack, char **av, bool do_free);
 int		main(int ac, char **av);
+/*---------sort_stack.c---------*/
+void	sort_stack(t_stack **a, t_stack **b, int size_stack_a, int round);
+/*---------sort_three.c---------*/
+void	sort_three(t_stack **stack);
 
 #endif

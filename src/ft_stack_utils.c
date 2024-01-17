@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:12:37 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 16:35:53 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:45:36 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,24 @@ int	stack_size(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+t_stack	*find_max(t_stack *stack)
+{
+	t_stack	*max_node;
+	// int		max;
+
+	if (!stack)
+		return (NULL);
+	max_node = stack;
+	while (stack)
+	{
+		if (stack->nbr > max_node->nbr)
+		{
+			max_node = stack;
+			// max = stack->nbr;
+		}
+		stack = stack->next;
+	}
+	return (max_node);
 }

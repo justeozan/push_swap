@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/01/15 17:07:21 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/01/17 10:51:18 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRC		=	\
 			src/ft_chekers.c\
 			src/ft_errors.c\
 			src/ft_stack_utils.c\
-			src/push_swap.c
+			src/push_swap.c\
+			src/sort_stack.c\
+			src/sort_three.c
 
 OBJ		=	${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 16:36:21 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:14:24 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	init_stack(t_stack **stack, char **av, bool do_free)
 int main(int ac, char **av)
 {
 	t_stack *a;
-	// t_stack *b;
+	t_stack *b;
 	
 	a = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
@@ -78,10 +78,9 @@ int main(int ac, char **av)
 		if (stack_size(a) == 2)
 			sa(&a);
 		else if (stack_size(a) == 3)
-			return (0);
+			sort_three(&a);
 		else
-			ft_putstr_fd("size is more than 3 numbers\n", 2);
-		
+			sort_stack(&a, &b, stack_size(a), 0);
 		return (0);
 	}
 	ft_putstr_fd("sorted\n", 2);
