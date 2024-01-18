@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/01/17 10:51:18 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/01/18 15:38:07 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC		=	\
 			\
 			src/ft_chekers.c\
 			src/ft_errors.c\
+			src/ft_sort_utils.c\
 			src/ft_stack_utils.c\
 			src/push_swap.c\
 			src/sort_stack.c\
@@ -34,10 +35,10 @@ RM		=	rm -f
 LIBFT	=	make all -C libft/
 
 .c.o:	include/push_swap.h
-		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		@${CC} ${CFLAGS} -g3 -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
-			@gcc -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
+			@gcc -g3 -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
 
 all:		${NAME}
 

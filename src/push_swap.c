@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 13:11:06 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:39:28 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	main(int ac, char **av)
 	t_stack	*b;
 
 	a = NULL;
+	b = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (-1);
 	else if (ac == 2)
@@ -71,17 +72,17 @@ int	main(int ac, char **av)
 		init_stack(&a, av + 1, false);
 	if (!stack_is_sorted(a))
 	{
-		ft_putstr_fd("not sorted\n", 2);
-		ft_printf("stack size = %d\n", stack_size(a));
+		//ft_putstr_fd("not sorted\n", 2);
+		//ft_printf("stack size = %d\n", stack_size(a));
 		if (stack_size(a) == 2)
 			sa(&a);
 		else if (stack_size(a) == 3)
 			sort_three(&a);
 		else
 			sort_stack(&a, &b, stack_size(a), 0);
-		return (0);
+		
 	}
-	ft_putstr_fd("sorted\n", 2);
+	//ft_putstr_fd("sorted\n", 2);
 	free_stack(&a);
 	return (0);
 }

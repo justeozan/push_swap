@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 08:41:24 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 13:11:17 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:17:10 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	sort_three(t_stack **stack)
 
 	if (!(*stack))
 		return ;
-	max = find_max(*stack);
+	// max = find_max(*stack);
+	max = find_max_or_min(*stack, true);
 	if ((*stack) == max)
 		ra(stack);
 	else if ((*stack)->next == max)

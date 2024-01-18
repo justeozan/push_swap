@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:58:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 15:14:24 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:56:48 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool	check_duplicate(t_stack *stack, int value)
 {
 	if (!stack)
 		return (false);
-	while (stack->next)
+	while (stack)
 	{
 		if (stack->nbr == value)
 			return (true);

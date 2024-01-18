@@ -6,11 +6,23 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:06:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 17:06:30 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:14:54 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	rotate_both(t_stack **st1, t_stack **st2, t_stack *cheap, bool rev)
+{
+	if (!rev)
+		while (*st2 != cheap && *st1 != cheap->target_node)
+			rr(st1, st2);
+	else
+		while (*st2 != cheap && *st1 != cheap->target_node)
+			rrr(st1, st2);
+	init_id(*st1);
+	init_id(*st2);
+}
 
 void	rotate(t_stack **stack)
 {
