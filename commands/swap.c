@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:06:18 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 17:18:51 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:47:20 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap(t_stack **stack)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!stack || stack_size(*stack) < 2)
 		return ;
 	tmp = (*stack);

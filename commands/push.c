@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:42:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/15 17:08:05 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:46:15 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*tmp;
-	
+
 	tmp = NULL;
 	if (!(*src))
 		return ;

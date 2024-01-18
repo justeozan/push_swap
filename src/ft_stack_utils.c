@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:12:37 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/17 16:45:36 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:05:21 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ bool	stack_is_sorted(t_stack *stack)
 	{
 		if (stack->nbr > stack->next->nbr)
 			return (false);
-		
 		stack = stack->next;
 	}
 	return (true);
@@ -52,22 +51,37 @@ int	stack_size(t_stack *stack)
 	return (i);
 }
 
-t_stack	*find_max(t_stack *stack)
+// t_stack	*find_max(t_stack *stack)
+// {
+// 	t_stack	*max_node;
+
+// 	if (!stack)
+// 		return (NULL);
+// 	max_node = stack;
+// 	while (stack)
+// 	{
+// 		if (stack->nbr > max_node->nbr)
+// 		{
+// 			max_node = stack;
+// 		}
+// 		stack = stack->next;
+// 	}
+// 	return (max_node);
+// }
+
+t_stack	*find_max_or_min(t_stack *stack, bool true_for_max)
 {
-	t_stack	*max_node;
-	// int		max;
+	t_stack	*extrem_node;
 
 	if (!stack)
 		return (NULL);
-	max_node = stack;
+	extrem_node = stack;
 	while (stack)
 	{
-		if (stack->nbr > max_node->nbr)
-		{
-			max_node = stack;
-			// max = stack->nbr;
-		}
+		if ((true_for_max == true && stack->nbr > extrem_node->nbr)
+			|| (true_for_max == false && stack->nbr < extrem_node->nbr))
+			extrem_node = stack;
 		stack = stack->next;
 	}
-	return (max_node);
+	return (extrem_node);
 }

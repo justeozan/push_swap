@@ -6,18 +6,16 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/17 11:14:24 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 11:48:15 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-
 int	add_element_in_stack(t_stack **stack, int n)
 {
-	t_stack *new;
-	t_stack *last_node;
+	t_stack	*new;
+	t_stack	*last_node;
 
 	if (!stack)
 		return (-1);
