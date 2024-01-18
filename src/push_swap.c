@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 11:48:15 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:11:06 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,20 @@ void	init_stack(t_stack **stack, char **av, bool do_free)
 		if (n > INT_MAX || n < INT_MIN)
 			ft_error(stack, "\nERROR : bad value", av, do_free);
 		if (check_duplicate(*stack, n))
-			ft_error(stack, "\nERROR : a number is present several times", av, do_free);
+			ft_error(stack, "\nERROR : number two times", av, do_free);
 		if (!add_element_in_stack(stack, (int)n))
-			ft_error(stack, "\nERROR : problem when adding to the stack", av, do_free);
+			ft_error(stack, "\nERROR : problem adding to stack", av, do_free);
 		i++;
 	}
 	if (do_free)
 		free2d(av);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_stack *a;
-	t_stack *b;
-	
+	t_stack	*a;
+	t_stack	*b;
+
 	a = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (-1);

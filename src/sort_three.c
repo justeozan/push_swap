@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 08:41:24 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/17 09:11:28 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:11:17 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_three(t_stack **stack)
 {
-	t_stack *max;
+	t_stack	*max;
 
 	if (!(*stack))
 		return ;
