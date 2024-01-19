@@ -6,11 +6,26 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 16:39:28 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:29:11 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	sort_three(t_stack **stack)
+{
+	t_stack	*max;
+
+	if (!(*stack))
+		return ;
+	max = find_max_or_min(*stack, true);
+	if ((*stack) == max)
+		ra(stack);
+	else if ((*stack)->next == max)
+		rra(stack);
+	if ((*stack)->nbr > (*stack)->next->nbr)
+		sa(stack);
+}
 
 int	add_element_in_stack(t_stack **stack, int n)
 {
@@ -72,17 +87,13 @@ int	main(int ac, char **av)
 		init_stack(&a, av + 1, false);
 	if (!stack_is_sorted(a))
 	{
-		//ft_putstr_fd("not sorted\n", 2);
-		//ft_printf("stack size = %d\n", stack_size(a));
 		if (stack_size(a) == 2)
 			sa(&a);
 		else if (stack_size(a) == 3)
 			sort_three(&a);
 		else
 			sort_stack(&a, &b, stack_size(a), 0);
-		
 	}
-	//ft_putstr_fd("sorted\n", 2);
 	free_stack(&a);
 	return (0);
 }

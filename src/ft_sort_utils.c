@@ -6,17 +6,11 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:16:09 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 17:12:07 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:28:33 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-// void	mv_ab();
-// void	mv_ba();
-// void	min_on_top();
-// void	cost_analyse();
-// void	find_cheapest();
 
 t_stack	*get_cheapest(t_stack *stack)
 {
@@ -60,7 +54,6 @@ void	min_on_top(t_stack **stack)
 		return ;
 	while ((*stack)->nbr != min_node->nbr)
 	{
-		// if ((*stack)->above_median)
 		if (min_node->above_median)
 			ra(stack);
 		else
@@ -68,26 +61,6 @@ void	min_on_top(t_stack **stack)
 		min_node = find_max_or_min(*stack, false);
 	}
 }
-
-// void min_on_top(t_stack **a)
-// {
-//     while (1)
-//     {
-//         t_stack *minNode = find_max_or_min(*a,false);
-
-//         if (!minNode) // Si la liste est vide, il n'y a rien à faire.
-//             return;
-
-//         if ((*a)->nbr == minNode->nbr) // Si le minimum est déjà en haut, nous avons terminé.
-//             break;
-
-//         // Le minimum n'est pas en haut, donc nous devons décider d'utiliser ra ou rra.
-//         if (minNode->above_median)
-//             ra(a);
-//         else
-//             rra(a);
-//     }
-// }
 
 void	find_cheapest(t_stack *stack)
 {
