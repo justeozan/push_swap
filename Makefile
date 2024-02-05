@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/01/19 14:14:05 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/01/23 09:34:32 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
 LIBFT	=	make all -C libft/
 
-.c.o:	include/push_swap.h
+.c.o:	include/push_swap.h include/commands.h
 		@${CC} ${CFLAGS} -g3 -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
