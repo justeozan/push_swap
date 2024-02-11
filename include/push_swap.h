@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/23 09:42:12 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/11 18:04:23 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ typedef struct s_stack
 # include "commands.h"
 
 /***************SRC****************/
-/*---------ft_chekers.c---------*/
+/*---------ft_errors.c---------*/
 bool	check_syntax(char *str);
 bool	check_duplicate(t_stack *a, int value);
-/*---------ft_errors.c---------*/
 void	free_stack(t_stack **stack);
 void	free2d(char **s);
 void	ft_error(t_stack **a, char *err_txt, char **av, bool do_free);
@@ -51,6 +50,7 @@ t_stack	*find_last(t_stack *stack);
 bool	stack_is_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 t_stack	*find_max_or_min(t_stack *stack, bool true_for_max);
+/*---------main.c---------*/
 /*---------push_swap.c---------*/
 void	sort_three(t_stack **stack);
 int		add_element_in_stack(t_stack **stack, int n);
