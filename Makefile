@@ -6,15 +6,13 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/12 13:34:31 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/12 16:54:10 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL: all
 
 NAME		=	push_swap
-
-NAME_BONUS	=	checker
 
 SRC			=	\
 				commands/push.c\
@@ -29,6 +27,22 @@ SRC			=	\
 				src/sort_stack.c\
 				src/main.c
 
+OBJ			=	${SRC:.c=.o}
+
+#Commands
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
+RM			=	rm -f
+
+all:			force ${NAME}
+
+${NAME}:		${OBJ}
+				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ) -o $(NAME) -Llibft -lft
+
+
+# BONUS ------------------------------------------------
+NAME_BONUS	=	checker
+
 SRC_BONUS		=	\
 				commands/push.c\
 				commands/rev_rotate.c\
@@ -42,27 +56,19 @@ SRC_BONUS		=	\
 				src/sort_stack.c\
 				src/checker.c
 
-OBJ			=	${SRC:.c=.o}
-
 OBJ_BONUS	=	${SRC_BONUS:.c=.o}
 
-#Commands
-CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-RM			=	rm -f
+bonus:			force $(NAME_BONUS)
+
+${NAME_BONUS}:	${OBJ_BONUS}
+				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ_BONUS) -o $(NAME_BONUS) -Llibft -lft
+# FIN-BONUS -------------------------------------------
 
 .c.o:	include/push_swap.h include/commands.h
 		@${CC} ${CFLAGS} -g3 -c $< -o ${<:.c=.o}
 
-${NAME}:		${OBJ}
-				@gcc -g3 -I include -I libft $(OBJ) -o $(NAME) -Llibft -lft
-
-${NAME_BONUS}:	${OBJ_BONUS}
-				@gcc -g3 -I include -I libft $(OBJ_BONUS) -o $(NAME_BONUS) -Llibft -lft
-
-all:			force ${NAME}
-
-bonus:			force $(NAME_BONUS)
+# objets/%.o:		%.c include/push_swap.h include/commands.h
+# 				@${CC} ${CFLAGS} -g3 -c $< -o $@
 
 clean:
 				@${RM} ${OBJ}
@@ -75,7 +81,7 @@ fclean:			clean
 				@make fclean -C libft
 
 force:
-				@make -C libft
+				make -C libft
 
 re:				fclean all
 

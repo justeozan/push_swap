@@ -6,14 +6,16 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 13:35:04 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/12 13:35:50 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/12 16:45:13 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL: all
 
+# Archive file name
 NAME	= libft.a
 
+# Source file paths
 SRCS	=	\
 			file/ft_putchar_fd.c\
 			file/ft_putendl_fd.c\
@@ -74,7 +76,7 @@ SRCS	=	\
 
 OBJS	= ${SRCS:.c=.o}
 
-#Commands
+# Controls
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
