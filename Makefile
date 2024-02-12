@@ -6,9 +6,11 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/11 18:02:22 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/12 13:34:31 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.DEFAULT_GOAL: all
 
 NAME		=	push_swap
 
@@ -48,7 +50,6 @@ OBJ_BONUS	=	${SRC_BONUS:.c=.o}
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
-LIBFT		=	make all -C libft/
 
 .c.o:	include/push_swap.h include/commands.h
 		@${CC} ${CFLAGS} -g3 -c $< -o ${<:.c=.o}
@@ -59,18 +60,25 @@ ${NAME}:		${OBJ}
 ${NAME_BONUS}:	${OBJ_BONUS}
 				@gcc -g3 -I include -I libft $(OBJ_BONUS) -o $(NAME_BONUS) -Llibft -lft
 
-all:			${NAME}
+all:			force ${NAME}
 
-bonus:			$(NAME_BONUS)
+bonus:			force $(NAME_BONUS)
 
 clean:
 				@${RM} ${OBJ}
 				@${RM} ${OBJ_BONUS}
+				@make clean -C libft
 
 fclean:			clean
 				@${RM} ${NAME}
 				@${RM} $(NAME_BONUS)
+				@make fclean -C libft
+
+force:
+				@make -C libft
 
 re:				fclean all
 
 reb:			fclean bonus
+
+.PHONY:			all bonus clean fclean force re reb

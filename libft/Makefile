@@ -1,8 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/02/12 13:35:04 by ozasahin          #+#    #+#              #
+#    Updated: 2024/02/12 13:35:50 by ozasahin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+.DEFAULT_GOAL: all
+
+NAME	= libft.a
+
 SRCS	=	\
 			file/ft_putchar_fd.c\
 			file/ft_putendl_fd.c\
 			file/ft_putnbr_fd.c\
 			file/ft_putstr_fd.c\
+			\
+			gnl/get_next_line_utils.c\
+			gnl/get_next_line.c\
 			\
 			is/ft_isalnum.c\
 			is/ft_isalpha.c\
@@ -55,13 +74,10 @@ SRCS	=	\
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME	= libft.a
-
-CC	= gcc
-
-CFLAGS	= -Wall -Wextra -Werror
-
-RM	= rm -f
+#Commands
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
+RM			=	rm -f
 
 .c.o:	libft.h
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -77,4 +93,6 @@ clean:
 fclean:		clean
 			${RM} ${NAME}
 
-re:		fclean all
+re:			fclean all
+
+.PHONY:		all clean fclean re
