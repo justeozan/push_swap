@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:42:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 11:46:15 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:32:34 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ void	push(t_stack **dst, t_stack **src)
 	(*dst) = tmp;
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, bool print)
 {
 	push(a, b);
-	write(1, "pa\n", 3);
+	if (print)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, bool print)
 {
 	push(b, a);
-	write(1, "pb\n", 3);
+	if (print)
+		write(1, "pb\n", 3);
 }

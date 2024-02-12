@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/11 18:01:00 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:52:38 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	sort_three(t_stack **stack)
 		return ;
 	max = find_max_or_min(*stack, true);
 	if ((*stack) == max)
-		ra(stack);
+		ra(stack, true);
 	else if ((*stack)->next == max)
-		rra(stack);
+		rra(stack, true);
 	if ((*stack)->nbr > (*stack)->next->nbr)
-		sa(stack);
+		sa(stack, true);
 }
 
 int	add_element_in_stack(t_stack **stack, int n)

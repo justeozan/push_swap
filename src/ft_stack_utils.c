@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:12:37 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 15:30:14 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:49:39 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	prep_for_push(t_stack **stack, t_stack *top_node, char name)
 		if (name == 'a')
 		{
 			if (top_node->above_median == true)
-				ra(stack);
+				ra(stack, true);
 			else
-				rra(stack);
+				rra(stack, true);
 		}
 		else if (name == 'b')
 		{
 			if (top_node->above_median)
-				rb(stack);
+				rb(stack, true);
 			else
-				rrb(stack);
+				rrb(stack, true);
 		}
 	}
 }

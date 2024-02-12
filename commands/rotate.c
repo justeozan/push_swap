@@ -6,20 +6,17 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:06:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/18 16:14:54 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:48:04 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	rotate_both(t_stack **st1, t_stack **st2, t_stack *cheap, bool rev)
+void	rotate_both(t_stack **st1, t_stack **st2, t_stack *cheap, bool print)
 {
-	if (!rev)
-		while (*st2 != cheap && *st1 != cheap->target_node)
-			rr(st1, st2);
-	else
-		while (*st2 != cheap && *st1 != cheap->target_node)
-			rrr(st1, st2);
+
+	while (*st2 != cheap && *st1 != cheap->target_node)
+		rr(st1, st2, print);
 	init_id(*st1);
 	init_id(*st2);
 }
@@ -38,21 +35,24 @@ void	rotate(t_stack **stack)
 	first->next = NULL;
 }
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, bool print)
 {
 	rotate(a);
-	write(1, "ra\n", 3);
+	if (print)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, bool print)
 {
 	rotate(b);
-	write(1, "rb\n", 3);
+	if (print)
+		write(1, "rb\n", 3);
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b, bool print)
 {
 	rotate(a);
 	rotate(b);
-	write(1, "rr\n", 3);
+	if (print)
+		write(1, "rr\n", 3);
 }

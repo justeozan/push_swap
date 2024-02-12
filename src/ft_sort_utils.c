@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:16:09 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/19 14:28:33 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:48:48 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ void	mv(t_stack **dst, t_stack **src, bool a_to_b)
 	if (a_to_b)
 	{
 		if (cheap->above_median && cheap->target_node->above_median)
-			rotate_both(dst, src, cheap, false);
-		else if (!(cheap->above_median) && !(cheap->target_node->above_median))
 			rotate_both(dst, src, cheap, true);
+		else if (!(cheap->above_median) && !(cheap->target_node->above_median))
+			rev_rotate_both(dst, src, cheap, true);
 		prep_for_push(src, cheap, 'a');
 		prep_for_push(dst, cheap->target_node, 'b');
-		pb(src, dst);
+		pb(src, dst, true);
 	}
 	else
 	{
 		prep_for_push(dst, (*src)->target_node, 'a');
-		pa(dst, src);
+		pa(dst, src, true);
 	}
 }
 
@@ -55,9 +55,9 @@ void	min_on_top(t_stack **stack)
 	while ((*stack)->nbr != min_node->nbr)
 	{
 		if (min_node->above_median)
-			ra(stack);
+			ra(stack, true);
 		else
-			rra(stack);
+			rra(stack, true);
 		min_node = find_max_or_min(*stack, false);
 	}
 }

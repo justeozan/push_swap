@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:51:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/01/19 15:29:05 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:55:20 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	sort_stack(t_stack **a, t_stack **b, int size_stack_a, int round)
 	while (!stack_is_sorted(*a) && size_stack_a-- > 3)
 	{
 		if (round++ < 2)
-			pb(a, b);
+			pb(a, b, true);
 		else
 		{
 			set_stack(*a, *b, 'a');

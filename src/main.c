@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:00:37 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/11 18:01:22 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:52:17 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 	if (!stack_is_sorted(a))
 	{
 		if (stack_size(a) == 2)
-			sa(&a);
+			sa(&a, true);
 		else if (stack_size(a) == 3)
 			sort_three(&a);
 		else

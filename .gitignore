@@ -1,5 +1,7 @@
 /push_swap_tester
 /checker_linux
 /push_swap_visualizer
+*.a
 *.o
 push_swap
+obj/
