@@ -41,7 +41,7 @@ int	do_commands(char *line, t_stack **stack_a, t_stack **stack_b)
 	return (1);
 }
 
-void	check_result(t_stack **a, t_stack **b)
+void	checker_result(t_stack **a, t_stack **b)
 {
 	if (stack_is_sorted(*a))
 		ft_printf("OK\n");
@@ -55,7 +55,7 @@ void	check_result(t_stack **a, t_stack **b)
 
 int	main(int ac, char **av)
 {
-	char	*line
+	char	*line;
 	t_stack	*a;
 	t_stack	*b;
 
@@ -64,20 +64,20 @@ int	main(int ac, char **av)
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (-1);
 	else if (ac == 2)
-		init_stack(&a, ft_split(av[1], ' '), true);
+		init_stack(&a, ft_split(av[1], ' '), true); // Juste renvoyer Error
 	else
-		init_stack(&a, av + 1, false);
+		init_stack(&a, av + 1, false); // Juste renvoyer Error
 	line = get_next_line(0);
 	while (line != NULL)
 	{
 		if (do_commands(line, &a, &b) == 0)
 		{
-			free_stack(&b);
-			ft_error(&a, "Error", NULL, False);
+			free_stack(&b); // + free line
+			ft_error(&a, "Error", NULL, false); // Juste renvoyer Error
 		}
 		free(line);
 		line = get_next_line(0);
 	}
-	checker_result(&a, &b);
+	checker_result(&a, &b);// + free line
 	return (0);
 }

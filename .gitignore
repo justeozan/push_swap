@@ -5,3 +5,4 @@
 *.o
 push_swap
 obj/
+/checker
