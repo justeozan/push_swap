@@ -6,13 +6,11 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:51:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/12 19:55:20 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:05:47 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-
 
 void	set_target_a(t_stack *stack, t_stack *target_stack, bool true_for_max)
 {
@@ -102,7 +100,6 @@ void	set_stack(t_stack *a, t_stack *b, char stack_name)
 		init_id(a);
 		init_id(b);
 		set_target_a(a, b, true);
-		// set_target(a, b, true, INT_MIN);
 		cost_analyse(a, stack_size(a), stack_size(b));
 		find_cheapest(a);
 	}
@@ -111,12 +108,11 @@ void	set_stack(t_stack *a, t_stack *b, char stack_name)
 		init_id(a);
 		init_id(b);
 		set_target_b(b, a, false);
-		// set_target(b, a, false, INT_MAX);
 	}
 }
 
 // sort_stack est la fonction primaire
-// dans mv on choisi trupour la direction : a_to_b
+// dans mv on choisi true pour la direction : a_to_b
 
 void	sort_stack(t_stack **a, t_stack **b, int size_stack_a, int round)
 {

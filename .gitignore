@@ -1,8 +1,13 @@
-/push_swap_tester
-/checker_linux
-/push_swap_visualizer
+# extension
 *.a
 *.o
-push_swap
+*.json
+
+# directory
 obj/
-/checker
+.vscode/
+
+# executable
+checker
+push_swap
+checker_linux

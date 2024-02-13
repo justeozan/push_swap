@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/12 19:52:38 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:03:45 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void	init_stack(t_stack **stack, char **av, bool do_free)
 	while (av[i])
 	{
 		if (!check_syntax(av[i]))
-			ft_error(stack, "\nERROR : bad syntax\n", av, do_free);
+			ft_error(stack, "Error\n", av, do_free);
 		n = ft_atol(av[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			ft_error(stack, "\nERROR : bad value", av, do_free);
+			ft_error(stack, "Error\n", av, do_free);
 		if (check_duplicate(*stack, n))
-			ft_error(stack, "\nERROR : number two times", av, do_free);
+			ft_error(stack, "Error\n", av, do_free);
 		if (!add_element_in_stack(stack, (int)n))
-			ft_error(stack, "\nERROR : problem adding to stack", av, do_free);
+			ft_error(stack, "Error\n", av, do_free);
 		i++;
 	}
 	if (do_free)

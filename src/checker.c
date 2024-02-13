@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:58:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/12 19:45:54 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:51:32 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void	checker_result(t_stack **a, t_stack **b)
 		free_stack(b);
 }
 
+void	free_for_checker(t_stack **a, t_stack **b, char **line)
+{
+	free_stack(b);
+	free(line);
+	ft_error(a, "Error", NULL, false);
+}
+
 int	main(int ac, char **av)
 {
 	char	*line;
@@ -64,20 +71,17 @@ int	main(int ac, char **av)
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (-1);
 	else if (ac == 2)
-		init_stack(&a, ft_split(av[1], ' '), true); // Juste renvoyer Error
+		init_stack(&a, ft_split(av[1], ' '), true);
 	else
-		init_stack(&a, av + 1, false); // Juste renvoyer Error
+		init_stack(&a, av + 1, false);
 	line = get_next_line(0);
 	while (line != NULL)
 	{
 		if (do_commands(line, &a, &b) == 0)
-		{
-			free_stack(&b); // + free line
-			ft_error(&a, "Error", NULL, false); // Juste renvoyer Error
-		}
+			free_for_checker(&a, &b, &line);
 		free(line);
 		line = get_next_line(0);
 	}
-	checker_result(&a, &b);// + free line
+	checker_result(&a, &b);
 	return (0);
 }
