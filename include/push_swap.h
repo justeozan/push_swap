@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/11 18:04:23 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:19:03 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdbool.h>
 # include "../libft/libft.h"
+# include "commands.h"
 
 typedef struct s_stack
 {
@@ -28,8 +29,6 @@ typedef struct s_stack
 	struct s_stack	*target_node;
 	struct s_stack	*next;
 }	t_stack;
-
-# include "commands.h"
 
 /***************SRC****************/
 /*---------ft_errors.c---------*/

@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:06:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/12 19:48:04 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:12:55 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	rotate_both(t_stack **st1, t_stack **st2, t_stack *cheap, bool print)
 {
-
 	while (*st2 != cheap && *st1 != cheap->target_node)
 		rr(st1, st2, print);
 	init_id(*st1);
