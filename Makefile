@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/16 16:43:02 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 16:45:37 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,17 +37,17 @@ CFLAGS_TEST	= -Wall -Wextra -Werror -fsanitize=address
 RM		= rm -f
 
 # Colors
-COLOR_RESET=\033[0m
-COLOR_RED=\033[0;31m
-COLOR_GREEN=\033[0;32m
-COLOR_PURPLE=\033[0;95m
-COLOR_BLUE=\033[0;34m
+COLOR_RESET		=\033[0m
+COLOR_RED		=\033[0;31m
+COLOR_GREEN		=\033[0;32m
+COLOR_PURPLE	=\033[0;95m
+COLOR_BLUE		=\033[0;34m
 
 # Messages colorés
-MESSAGE_COMPILE=$(COLOR_BLUE)Compiling the program...$(COLOR_RESET)
-MESSAGE_DONE=$(COLOR_GREEN)Compilation completed.$(COLOR_RESET)
-MESSAGE_CLEAN=$(COLOR_PURPLE)Cleaning up...$(COLOR_RESET)
-MESSAGE_CLEAN_DONE=$(COLOR_PURPLE)Cleanup completed.$(COLOR_RESET)
+MESSAGE_COMPILE		=$(COLOR_BLUE)Compiling the program...$(COLOR_RESET)
+MESSAGE_DONE		=$(COLOR_GREEN)Compilation completed.$(COLOR_RESET)
+MESSAGE_CLEAN		=$(COLOR_PURPLE)Cleaning up...$(COLOR_RESET)
+MESSAGE_CLEAN_DONE	=$(COLOR_PURPLE)Cleanup completed.$(COLOR_RESET)
 
 all:	force $(NAME)
 			
