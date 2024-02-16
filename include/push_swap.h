@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/13 15:19:03 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:04:42 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <limits.h>
 # include <stdbool.h>
 # include "../libft/libft.h"
-# include "commands.h"
 
 typedef struct s_stack
 {
@@ -29,6 +28,29 @@ typedef struct s_stack
 	struct s_stack	*target_node;
 	struct s_stack	*next;
 }	t_stack;
+
+/*************COMMANDS**************/
+/*---------push.c---------*/
+void	push(t_stack **dest, t_stack **src);
+void	pa(t_stack **a, t_stack **b, bool print);
+void	pb(t_stack **a, t_stack **b, bool print);
+/*---------rev_rotate.c---------*/
+void	rev_rotate_both(t_stack **s1, t_stack **s2, t_stack *cheap, bool print);
+void	rev_rotate(t_stack **stack);
+void	rra(t_stack **a, bool print);
+void	rrb(t_stack **b, bool print);
+void	rrr(t_stack **a, t_stack **b, bool print);
+/*---------rotate.c---------*/
+void	rotate_both(t_stack **st1, t_stack **st2, t_stack *cheap, bool print);
+void	rotate(t_stack **stack);
+void	ra(t_stack **a, bool print);
+void	rb(t_stack **b, bool print);
+void	rr(t_stack **a, t_stack **b, bool print);
+/*---------swap.c---------*/
+void	swap(t_stack **stack);
+void	sa(t_stack **a, bool print);
+void	sb(t_stack **b, bool print);
+void	ss(t_stack **a, t_stack **b, bool print);
 
 /***************SRC****************/
 /*---------ft_errors.c---------*/
