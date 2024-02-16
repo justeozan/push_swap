@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:21 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/13 15:03:45 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:43:18 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	add_element_in_stack(t_stack **stack, int n)
 		return (-1);
 	new->next = NULL;
 	new->nbr = n;
+	new->cheapest = false;
 	if (!(*stack))
 		(*stack) = new;
 	else
@@ -55,6 +56,8 @@ void	init_stack(t_stack **stack, char **av, bool do_free)
 	long	n;
 
 	i = 0;
+	if (!av)
+		return ;
 	while (av[i])
 	{
 		if (!check_syntax(av[i]))

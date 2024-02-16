@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/16 10:13:30 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 14:19:03 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,20 @@ OBJ		= $(patsubst %,$(OBJDIR)/%,$(SRC:.c=.o))
 # Controls
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+CFLAGS_TEST	= -Wall -Wextra -Werror -fsanitize=address
 RM		= rm -f
 
 all:	force $(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ) libft/libft.a
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ) -o $(NAME) -Llibft -lft
+
+NAME_TEST	=	ps_with_test
+
+test:	force $(NAME_TEST)
+
+$(NAME_TEST):	$(OBJ)
+				$(CC) $(CFLAGS_TEST) -g3 -Iinclude -Ilibft $(OBJ) -o $(NAME_TEST) -Llibft -lft
 
 # BONUS ------------------------------------------------
 NAME_BONUS	= checker
@@ -60,11 +68,11 @@ OBJ_BONUS	= $(patsubst %,$(OBJDIR)/%,$(SRC_BONUS:.c=.o))
 
 bonus:	force $(NAME_BONUS)
 
-$(NAME_BONUS):	$(OBJ_BONUS)
+$(NAME_BONUS):	$(OBJ_BONUS) libft/libft.a
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ_BONUS) -o $(NAME_BONUS) -Llibft -lft
 # END-BONUS -------------------------------------------
 
-$(OBJDIR)/%.o:	%.c include/push_swap.h | $(OBJDIR)
+$(OBJDIR)/%.o:	%.c include/push_swap.h libft/libft.h | $(OBJDIR)
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft -c $< -o $@
 
 $(OBJDIR):
@@ -87,4 +95,4 @@ re:		fclean all
 
 reb:	clean bonus
 
-.PHONY:	all bonus clean fclean force re reb
+.PHONY:	all test bonus clean fclean force re reb

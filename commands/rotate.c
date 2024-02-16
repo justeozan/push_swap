@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:06:20 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/13 15:12:55 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/16 15:52:10 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ void	rotate(t_stack **stack)
 	t_stack	*first;
 	t_stack	*last;
 
-	if (!stack)
+	if (!(*stack) || !(*stack)->next)
+	{
+		free_stack(stack);
 		return ;
+	}
 	first = (*stack);
 	(*stack) = (*stack)->next;
 	last = find_last(*stack);

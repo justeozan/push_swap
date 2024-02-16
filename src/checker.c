@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:58:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/13 14:51:32 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:05:48 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,25 @@ int	do_commands(char *line, t_stack **stack_a, t_stack **stack_b)
 	return (1);
 }
 
-void	checker_result(t_stack **a, t_stack **b)
+int	checker_result(t_stack **a, t_stack **b, char *line)
 {
 	if (stack_is_sorted(*a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	if (*a)
-		free_stack(a);
-	if (*b)
-		free_stack(b);
+	// if (*a)
+	free(line);
+	free_stack(a);
+	// if (*b)
+	free_stack(b);
+	return (0);
 }
 
-void	free_for_checker(t_stack **a, t_stack **b, char **line)
+void	free_for_checker(t_stack **a, t_stack **b, char *line)
 {
-	free_stack(b);
 	free(line);
-	ft_error(a, "Error", NULL, false);
+	free_stack(b);
+	ft_error(a, "Error\n", NULL, false);
 }
 
 int	main(int ac, char **av)
@@ -78,10 +80,9 @@ int	main(int ac, char **av)
 	while (line != NULL)
 	{
 		if (do_commands(line, &a, &b) == 0)
-			free_for_checker(&a, &b, &line);
+			free_for_checker(&a, &b, line);
 		free(line);
 		line = get_next_line(0);
 	}
-	checker_result(&a, &b);
-	return (0);
+	return (checker_result(&a, &b, line));
 }
