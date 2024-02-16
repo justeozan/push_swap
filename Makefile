@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/16 14:19:03 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 16:10:00 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,13 +40,6 @@ all:	force $(NAME)
 
 $(NAME):	$(OBJ) libft/libft.a
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ) -o $(NAME) -Llibft -lft
-
-NAME_TEST	=	ps_with_test
-
-test:	force $(NAME_TEST)
-
-$(NAME_TEST):	$(OBJ)
-				$(CC) $(CFLAGS_TEST) -g3 -Iinclude -Ilibft $(OBJ) -o $(NAME_TEST) -Llibft -lft
 
 # BONUS ------------------------------------------------
 NAME_BONUS	= checker
