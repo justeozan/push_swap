@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/16 16:22:54 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 16:43:02 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,10 +101,10 @@ clean:
 fclean:	clean
 				@$(RM) $(NAME)
 				@$(RM) $(NAME_BONUS)
-				@make fclean -C libft
+				@make fclean -C libft -s
 
 force:
-				@make -C libft
+				@make -C libft -s
 
 re:		fclean all
 

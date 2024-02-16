@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 13:35:04 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/12 17:08:28 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 16:40:47 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,16 +82,33 @@ CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
 
+# Colors
+COLOR_RESET=\033[0m
+COLOR_GRAY=\033[0;90m
+
+
+# Messages colorés
+MESSAGE_COMPILE=$(COLOR_GRAY)(Libft) Compiling the program...$(COLOR_RESET)
+MESSAGE_DONE=$(COLOR_GRAY)(Libft) Compilation completed.$(COLOR_RESET)
+MESSAGE_CLEAN=$(COLOR_GRAY)(Libft) Cleaning up Libft...$(COLOR_RESET)
+MESSAGE_CLEAN_DONE=$(COLOR_GRAY)(Libft) Cleanup Libft completed.$(COLOR_RESET)
+
 .c.o:		libft.h
 			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
+			@echo "$(MESSAGE_COMPILE)"
 			@ar rc ${NAME} ${OBJS}
+			@echo "$(MESSAGE_DONE)"
+
 
 all:		${NAME}
 
 clean:
+			@echo "$(MESSAGE_CLEAN)"
 			@${RM} ${OBJS}
+			@echo "$(MESSAGE_CLEAN_DONE)"
+
 
 fclean:		clean
 			@${RM} ${NAME}
