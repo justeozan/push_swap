@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 11:09:06 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/16 10:04:42 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:05:59 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ t_stack	*find_last(t_stack *stack);
 bool	stack_is_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 t_stack	*find_max_or_min(t_stack *stack, bool true_for_max);
-/*---------main.c---------*/
 /*---------push_swap.c---------*/
 void	sort_three(t_stack **stack);
 int		add_element_in_stack(t_stack **stack, int n);
