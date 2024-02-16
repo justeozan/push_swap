@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/13 14:54:32 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/16 10:13:30 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ $(NAME_BONUS):	$(OBJ_BONUS)
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft $(OBJ_BONUS) -o $(NAME_BONUS) -Llibft -lft
 # END-BONUS -------------------------------------------
 
-$(OBJDIR)/%.o:	%.c include/push_swap.h include/commands.h | $(OBJDIR)
+$(OBJDIR)/%.o:	%.c include/push_swap.h | $(OBJDIR)
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft -c $< -o $@
 
 $(OBJDIR):
