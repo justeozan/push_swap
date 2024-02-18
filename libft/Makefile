@@ -93,8 +93,7 @@ MESSAGE_CLEAN=$(COLOR_GRAY)(Libft) Cleaning up Libft...$(COLOR_RESET)
 MESSAGE_CLEAN_DONE=$(COLOR_GRAY)(Libft) Cleanup Libft completed.$(COLOR_RESET)
 
 %.o:		%.c libft.h
-			# @${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-			${CC} ${CFLAGS} -c $< -o $@
+			@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
 			@echo "$(MESSAGE_COMPILE)"
