@@ -86,15 +86,15 @@ RM			=	rm -f
 COLOR_RESET=\033[0m
 COLOR_GRAY=\033[0;90m
 
-
 # Messages colorés
 MESSAGE_COMPILE=$(COLOR_GRAY)(Libft) Compiling the program...$(COLOR_RESET)
 MESSAGE_DONE=$(COLOR_GRAY)(Libft) Compilation completed.$(COLOR_RESET)
 MESSAGE_CLEAN=$(COLOR_GRAY)(Libft) Cleaning up Libft...$(COLOR_RESET)
 MESSAGE_CLEAN_DONE=$(COLOR_GRAY)(Libft) Cleanup Libft completed.$(COLOR_RESET)
 
-.c.o:		libft.h
-			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:		%.c libft.h
+			# @${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
 			@echo "$(MESSAGE_COMPILE)"
