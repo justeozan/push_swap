@@ -6,7 +6,7 @@
 #    By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 10:58:27 by ozasahin          #+#    #+#              #
-#    Updated: 2024/02/16 16:45:37 by ozasahin         ###   ########.fr        #
+#    Updated: 2024/02/28 19:30:55 by ozasahin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,10 @@ COLOR_PURPLE	=\033[0;95m
 COLOR_BLUE		=\033[0;34m
 
 # Messages colorés
-MESSAGE_COMPILE		=$(COLOR_BLUE)Compiling the program...$(COLOR_RESET)
-MESSAGE_DONE		=$(COLOR_GREEN)Compilation completed.$(COLOR_RESET)
-MESSAGE_CLEAN		=$(COLOR_PURPLE)Cleaning up...$(COLOR_RESET)
-MESSAGE_CLEAN_DONE	=$(COLOR_PURPLE)Cleanup completed.$(COLOR_RESET)
+MESSAGE_COMPILE		=	$(COLOR_BLUE)Compiling the program...$(COLOR_RESET)
+MESSAGE_DONE		=	$(COLOR_GREEN)Compilation completed.$(COLOR_RESET)
+MESSAGE_CLEAN		=	$(COLOR_PURPLE)Cleaning up...$(COLOR_RESET)
+MESSAGE_CLEAN_DONE	=	$(COLOR_PURPLE)Cleanup completed.$(COLOR_RESET)
 
 all:	force $(NAME)
 			
@@ -85,7 +85,7 @@ $(NAME_BONUS):	$(OBJ_BONUS) libft/libft.a
 
 # END-BONUS -------------------------------------------
 
-$(OBJDIR)/%.o:	%.c include/push_swap.h libft/libft.h | $(OBJDIR)
+$(OBJDIR)/%.o:	%.c include/push_swap.h libft/libft.h Makefile | $(OBJDIR)
 				@$(CC) $(CFLAGS) -g3 -Iinclude -Ilibft -c $< -o $@
 
 $(OBJDIR):
