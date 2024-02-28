@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:12:17 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/16 15:27:46 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/28 19:37:32 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ void	ft_error(t_stack **a, char *err_txt, char **av, bool do_free)
 {
 	if (do_free)
 		free2d(av);
-	// if (av != NULL)
-	// 	free2d(av);
 	free_stack(a);
 	ft_putstr_fd(err_txt, 2);
 	exit(EXIT_FAILURE);

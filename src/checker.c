@@ -6,7 +6,7 @@
 /*   By: ozasahin <ozasahin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:58:23 by ozasahin          #+#    #+#             */
-/*   Updated: 2024/02/16 16:05:48 by ozasahin         ###   ########.fr       */
+/*   Updated: 2024/02/28 19:38:37 by ozasahin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ int	checker_result(t_stack **a, t_stack **b, char *line)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	// if (*a)
 	free(line);
 	free_stack(a);
-	// if (*b)
 	free_stack(b);
 	return (0);
 }
